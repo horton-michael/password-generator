@@ -38,13 +38,33 @@ function generatePassword() {
     var useUppercase = confirm("Do you want to include uppercase characters?");
     // yes? add uppercase characters into list of chosen characters
     if (useUppercase) {
-      selectedChars += upperChars;
+      userChars += upperChars;
+    }
+
+    // are we using special characters
+    var useSpecialChars = confirm("Do you want to include special characters?");
+    // yes? add special characters into list of chosen characters
+    if (useSpecialChars) {
+      userChars += specialChars;
+    }
+
+    // are we using numerical characters
+    var useNumericalChars = confirm(
+      "Do you want to include numerical characters?"
+    );
+    // yes? add special characters into list of chosen characters
+    if (useNumericalChars) {
+      userChars += numericalChars;
+    }
+
+    // verify user selected at least one character type, otherwise run the function again
+    if (userChars === "") {
+      alert("Please choose at least one character type.");
+      return characterSelection();
     }
   }
-  // are we using special characters
-  // yes? add special characters into list of chosen characters
-  // are we using numerical characters
-  // yes? add numerical characters into list of chosen characters
+  characterSelection();
+
   // random characters
   // based on chosen length select random characters from the chosen character set and put them in the password variable
 
