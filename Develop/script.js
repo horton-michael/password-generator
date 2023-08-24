@@ -26,17 +26,21 @@ function generatePassword() {
   }
 
   function characterSelection() {
-    // are we using lowercase?
     var userChars = "";
+    // are we using lowercase?
     var useLowercase = confirm("Do you want to include lowercase characters?");
+    // yes? add lowercase characters into list of chosen characters
     if (useLowercase) {
       userChars += lowerChars;
     }
-  }
 
-  // yes? add lowercase characters into list of chosen characters
-  // are we using uppercase?
-  // yes? add uppercase characters into list of chosen characters
+    // are we using uppercase?
+    var useUppercase = confirm("Do you want to include uppercase characters?");
+    // yes? add uppercase characters into list of chosen characters
+    if (useUppercase) {
+      selectedChars += upperChars;
+    }
+  }
   // are we using special characters
   // yes? add special characters into list of chosen characters
   // are we using numerical characters
