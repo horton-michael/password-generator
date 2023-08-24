@@ -10,6 +10,13 @@ function writePassword() {
 }
 
 function generatePassword() {
+  // character type variables
+  var password = "";
+  var lowerChars = "abcdefghijklmnopqrstuvwxyz";
+  var upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var specialChars = "~!@#$%^&*()-_=+[]{}|;:',.<>?/";
+  var numericalChars = "0123456789";
+
   // ask how long password should be
   // check if password is between 8 - 128 characters
   // no? ask again
