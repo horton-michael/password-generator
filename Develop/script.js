@@ -18,8 +18,12 @@ function generatePassword() {
   var numericalChars = "0123456789";
 
   // ask how long password should be
+  var passwordLength = prompt("How long should the password be?");
   // check if password is between 8 - 128 characters
-  // no? ask again
+  if (passwordLength < 8 || passwordLength > 128) {
+    // no? ask again
+    passwordLength = prompt("Password length must be between 8 and 128.");
+  }
   // are we using lowercase?
   // yes? add lowercase characters into list of chosen characters
   // are we using uppercase?
