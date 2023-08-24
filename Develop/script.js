@@ -24,7 +24,16 @@ function generatePassword() {
     // no? ask again
     passwordLength = prompt("Password length must be between 8 and 128.");
   }
-  // are we using lowercase?
+
+  function characterSelection() {
+    // are we using lowercase?
+    var userChars = "";
+    var useLowercase = confirm("Do you want to include lowercase characters?");
+    if (useLowercase) {
+      userChars += lowerChars;
+    }
+  }
+
   // yes? add lowercase characters into list of chosen characters
   // are we using uppercase?
   // yes? add uppercase characters into list of chosen characters
