@@ -24,9 +24,9 @@ function generatePassword() {
     // no? ask again
     passwordLength = prompt("Password length must be between 8 and 128.");
   }
-
+  var userChars = "";
+  // Determine which character types should be used and verify user selects at least one character type
   function characterSelection() {
-    var userChars = "";
     // are we using lowercase?
     var useLowercase = confirm("Do you want to include lowercase characters?");
     // yes? add lowercase characters into list of chosen characters
@@ -63,12 +63,14 @@ function generatePassword() {
       return characterSelection();
     }
   }
+
   characterSelection();
-
-  // random characters
   // based on chosen length select random characters from the chosen character set and put them in the password variable
+  for (var i = 0; i < passwordLength; i++) {
+    var randomInd = Math.floor(Math.random() * userChars.length);
+    password += userChars[randomInd];
+  }
 
-  var password = "placeholder";
   return password;
 }
 
